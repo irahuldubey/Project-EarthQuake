@@ -1,5 +1,5 @@
 //
-//  SceneDelegate.swift
+//  EQSceneDelegate.swift
 //  EarthQuake
 //
 //  Created by Rahul Dubey on 3/8/21.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+class EQSceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
@@ -17,6 +17,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        if let splitViewController = window?.rootViewController as? EQSplitViewController,
+           let lastViewController = splitViewController.viewControllers.last as? UINavigationController,
+           let firstViewController = splitViewController.viewControllers.first as? UINavigationController,
+           let masterViewController = firstViewController.viewControllers.first as? EQMasterViewController,
+           let detailsViewController = lastViewController.viewControllers.first as? EQDetailsViewController {
+            masterViewController.delegate = detailsViewController
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

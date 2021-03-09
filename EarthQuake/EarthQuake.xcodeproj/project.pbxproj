@@ -7,14 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BB3C13B125F7054F00A62B53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C13B025F7054F00A62B53 /* AppDelegate.swift */; };
-		BB3C13B325F7054F00A62B53 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C13B225F7054F00A62B53 /* SceneDelegate.swift */; };
-		BB3C13B525F7054F00A62B53 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C13B425F7054F00A62B53 /* ViewController.swift */; };
+		BB3C13B125F7054F00A62B53 /* EQAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C13B025F7054F00A62B53 /* EQAppDelegate.swift */; };
+		BB3C13B325F7054F00A62B53 /* EQSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C13B225F7054F00A62B53 /* EQSceneDelegate.swift */; };
 		BB3C13B825F7054F00A62B53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB3C13B625F7054F00A62B53 /* Main.storyboard */; };
 		BB3C13BA25F7055000A62B53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB3C13B925F7055000A62B53 /* Assets.xcassets */; };
 		BB3C13BD25F7055000A62B53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB3C13BB25F7055000A62B53 /* LaunchScreen.storyboard */; };
 		BB3C13C825F7055000A62B53 /* EarthQuakeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C13C725F7055000A62B53 /* EarthQuakeTests.swift */; };
 		BB3C13D325F7055000A62B53 /* EarthQuakeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C13D225F7055000A62B53 /* EarthQuakeUITests.swift */; };
+		BB3C13ED25F70CC300A62B53 /* EQMasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C13EC25F70CC300A62B53 /* EQMasterViewController.swift */; };
+		BB3C13EE25F70CC300A62B53 /* EQMasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C13EC25F70CC300A62B53 /* EQMasterViewController.swift */; };
+		BB3C13EF25F70CC300A62B53 /* EQMasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C13EC25F70CC300A62B53 /* EQMasterViewController.swift */; };
+		BB3C13F425F70CD300A62B53 /* EQDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C13F325F70CD300A62B53 /* EQDetailsViewController.swift */; };
+		BB3C13F525F70CD300A62B53 /* EQDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C13F325F70CD300A62B53 /* EQDetailsViewController.swift */; };
+		BB3C13F625F70CD300A62B53 /* EQDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C13F325F70CD300A62B53 /* EQDetailsViewController.swift */; };
+		BB3C140625F7127400A62B53 /* EQSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C140525F7127400A62B53 /* EQSplitViewController.swift */; };
+		BB3C140725F7127400A62B53 /* EQSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C140525F7127400A62B53 /* EQSplitViewController.swift */; };
+		BB3C140825F7127400A62B53 /* EQSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C140525F7127400A62B53 /* EQSplitViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,9 +44,8 @@
 
 /* Begin PBXFileReference section */
 		BB3C13AD25F7054F00A62B53 /* EarthQuake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EarthQuake.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		BB3C13B025F7054F00A62B53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BB3C13B225F7054F00A62B53 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BB3C13B425F7054F00A62B53 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BB3C13B025F7054F00A62B53 /* EQAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQAppDelegate.swift; sourceTree = "<group>"; };
+		BB3C13B225F7054F00A62B53 /* EQSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQSceneDelegate.swift; sourceTree = "<group>"; };
 		BB3C13B725F7054F00A62B53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BB3C13B925F7055000A62B53 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB3C13BC25F7055000A62B53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +56,9 @@
 		BB3C13CE25F7055000A62B53 /* EarthQuakeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EarthQuakeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB3C13D225F7055000A62B53 /* EarthQuakeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthQuakeUITests.swift; sourceTree = "<group>"; };
 		BB3C13D425F7055000A62B53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB3C13EC25F70CC300A62B53 /* EQMasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQMasterViewController.swift; sourceTree = "<group>"; };
+		BB3C13F325F70CD300A62B53 /* EQDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQDetailsViewController.swift; sourceTree = "<group>"; };
+		BB3C140525F7127400A62B53 /* EQSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQSplitViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,7 +164,9 @@
 		BB3C13E625F705CE00A62B53 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				BB3C13B425F7054F00A62B53 /* ViewController.swift */,
+				BB3C13EC25F70CC300A62B53 /* EQMasterViewController.swift */,
+				BB3C13F325F70CD300A62B53 /* EQDetailsViewController.swift */,
+				BB3C140525F7127400A62B53 /* EQSplitViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -162,8 +174,8 @@
 		BB3C13E725F705E000A62B53 /* AppDelegates */ = {
 			isa = PBXGroup;
 			children = (
-				BB3C13B025F7054F00A62B53 /* AppDelegate.swift */,
-				BB3C13B225F7054F00A62B53 /* SceneDelegate.swift */,
+				BB3C13B025F7054F00A62B53 /* EQAppDelegate.swift */,
+				BB3C13B225F7054F00A62B53 /* EQSceneDelegate.swift */,
 			);
 			path = AppDelegates;
 			sourceTree = "<group>";
@@ -306,9 +318,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB3C13B525F7054F00A62B53 /* ViewController.swift in Sources */,
-				BB3C13B125F7054F00A62B53 /* AppDelegate.swift in Sources */,
-				BB3C13B325F7054F00A62B53 /* SceneDelegate.swift in Sources */,
+				BB3C13ED25F70CC300A62B53 /* EQMasterViewController.swift in Sources */,
+				BB3C13B125F7054F00A62B53 /* EQAppDelegate.swift in Sources */,
+				BB3C140625F7127400A62B53 /* EQSplitViewController.swift in Sources */,
+				BB3C13B325F7054F00A62B53 /* EQSceneDelegate.swift in Sources */,
+				BB3C13F425F70CD300A62B53 /* EQDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,7 +330,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB3C13EE25F70CC300A62B53 /* EQMasterViewController.swift in Sources */,
 				BB3C13C825F7055000A62B53 /* EarthQuakeTests.swift in Sources */,
+				BB3C13F525F70CD300A62B53 /* EQDetailsViewController.swift in Sources */,
+				BB3C140725F7127400A62B53 /* EQSplitViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,7 +341,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB3C13EF25F70CC300A62B53 /* EQMasterViewController.swift in Sources */,
 				BB3C13D325F7055000A62B53 /* EarthQuakeUITests.swift in Sources */,
+				BB3C13F625F70CD300A62B53 /* EQDetailsViewController.swift in Sources */,
+				BB3C140825F7127400A62B53 /* EQSplitViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
