@@ -99,12 +99,12 @@
 		BB3C13AF25F7054F00A62B53 /* EarthQuake */ = {
 			isa = PBXGroup;
 			children = (
-				BB3C13B025F7054F00A62B53 /* AppDelegate.swift */,
-				BB3C13B225F7054F00A62B53 /* SceneDelegate.swift */,
-				BB3C13B425F7054F00A62B53 /* ViewController.swift */,
-				BB3C13B625F7054F00A62B53 /* Main.storyboard */,
-				BB3C13B925F7055000A62B53 /* Assets.xcassets */,
-				BB3C13BB25F7055000A62B53 /* LaunchScreen.storyboard */,
+				BB3C13E825F7060700A62B53 /* Resources */,
+				BB3C13E725F705E000A62B53 /* AppDelegates */,
+				BB3C13E625F705CE00A62B53 /* ViewControllers */,
+				BB3C13E525F705BC00A62B53 /* Model */,
+				BB3C13E425F705B600A62B53 /* ViewModel */,
+				BB3C13E325F705A200A62B53 /* Storyboards */,
 				BB3C13BE25F7055000A62B53 /* Info.plist */,
 			);
 			path = EarthQuake;
@@ -126,6 +126,54 @@
 				BB3C13D425F7055000A62B53 /* Info.plist */,
 			);
 			path = EarthQuakeUITests;
+			sourceTree = "<group>";
+		};
+		BB3C13E325F705A200A62B53 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				BB3C13BB25F7055000A62B53 /* LaunchScreen.storyboard */,
+				BB3C13B625F7054F00A62B53 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		BB3C13E425F705B600A62B53 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BB3C13E525F705BC00A62B53 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BB3C13E625F705CE00A62B53 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				BB3C13B425F7054F00A62B53 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		BB3C13E725F705E000A62B53 /* AppDelegates */ = {
+			isa = PBXGroup;
+			children = (
+				BB3C13B025F7054F00A62B53 /* AppDelegate.swift */,
+				BB3C13B225F7054F00A62B53 /* SceneDelegate.swift */,
+			);
+			path = AppDelegates;
+			sourceTree = "<group>";
+		};
+		BB3C13E825F7060700A62B53 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BB3C13B925F7055000A62B53 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
