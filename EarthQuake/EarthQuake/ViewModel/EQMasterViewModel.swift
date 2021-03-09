@@ -15,4 +15,9 @@ final class EQMasterViewModel: EQMasterViewModelProtocol {
  
     func fetchEarthQuakeSignificant() { }
     
+    private let dataSource: EQEarthQuakeDataSource
+    
+    init(with dataSource: EQEarthQuakeDataSource) {
+        self.dataSource = dataSource
+    }
 }

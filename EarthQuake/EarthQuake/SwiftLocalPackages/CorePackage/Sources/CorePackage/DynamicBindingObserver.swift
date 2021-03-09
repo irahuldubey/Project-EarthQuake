@@ -11,7 +11,7 @@ final public class DynamicBindingObserver<T> {
     
     public typealias CompletionHandler = ((T) -> Void)
     
-    var value : T {
+    public var value : T {
         didSet {
             self.notify()
         }
@@ -19,7 +19,7 @@ final public class DynamicBindingObserver<T> {
     
     private var observers = [String: CompletionHandler]()
     
-    init(_ value: T) {
+    public init(_ value: T) {
         self.value = value
     }
     

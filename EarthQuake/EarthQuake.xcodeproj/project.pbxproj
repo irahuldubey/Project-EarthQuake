@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB02492825F820EB00E9A884 /* EQFeatureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB02492725F820EB00E9A884 /* EQFeatureTableViewCell.swift */; };
+		BB02492925F820EB00E9A884 /* EQFeatureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB02492725F820EB00E9A884 /* EQFeatureTableViewCell.swift */; };
+		BB02492A25F820EB00E9A884 /* EQFeatureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB02492725F820EB00E9A884 /* EQFeatureTableViewCell.swift */; };
 		BB3C13B125F7054F00A62B53 /* EQAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C13B025F7054F00A62B53 /* EQAppDelegate.swift */; };
 		BB3C13B325F7054F00A62B53 /* EQSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C13B225F7054F00A62B53 /* EQSceneDelegate.swift */; };
 		BB3C13B825F7054F00A62B53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB3C13B625F7054F00A62B53 /* Main.storyboard */; };
@@ -61,6 +64,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BB02492725F820EB00E9A884 /* EQFeatureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQFeatureTableViewCell.swift; sourceTree = "<group>"; };
 		BB3C13AD25F7054F00A62B53 /* EarthQuake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EarthQuake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB3C13B025F7054F00A62B53 /* EQAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQAppDelegate.swift; sourceTree = "<group>"; };
 		BB3C13B225F7054F00A62B53 /* EQSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQSceneDelegate.swift; sourceTree = "<group>"; };
@@ -246,6 +250,7 @@
 		BB8BADF925F7304F005264CD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BB02492725F820EB00E9A884 /* EQFeatureTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -442,6 +447,7 @@
 				BBD4A5ED25F77BCE00D9357E /* EQEarthMetaData.swift in Sources */,
 				BB3C140625F7127400A62B53 /* EQSplitViewController.swift in Sources */,
 				BB3C13B325F7054F00A62B53 /* EQSceneDelegate.swift in Sources */,
+				BB02492825F820EB00E9A884 /* EQFeatureTableViewCell.swift in Sources */,
 				BB3C13F425F70CD300A62B53 /* EQDetailsViewController.swift in Sources */,
 				BBD4A68C25F8011A00D9357E /* AppConfigurationService.swift in Sources */,
 				BBD4A5FA25F77C5500D9357E /* EQEarthQuakeProperties.swift in Sources */,
@@ -456,6 +462,7 @@
 				BB3C13EE25F70CC300A62B53 /* EQMasterViewController.swift in Sources */,
 				BBD4A69E25F814E600D9357E /* EQDetailsViewModel.swift in Sources */,
 				BB3C13C825F7055000A62B53 /* EarthQuakeTests.swift in Sources */,
+				BB02492925F820EB00E9A884 /* EQFeatureTableViewCell.swift in Sources */,
 				BB3C13F525F70CD300A62B53 /* EQDetailsViewController.swift in Sources */,
 				BB3C140725F7127400A62B53 /* EQSplitViewController.swift in Sources */,
 				BBD4A6AE25F81B8900D9357E /* EarthQuakeDataSource.swift in Sources */,
@@ -470,6 +477,7 @@
 				BB3C13EF25F70CC300A62B53 /* EQMasterViewController.swift in Sources */,
 				BBD4A69F25F814E600D9357E /* EQDetailsViewModel.swift in Sources */,
 				BB3C13D325F7055000A62B53 /* EarthQuakeUITests.swift in Sources */,
+				BB02492A25F820EB00E9A884 /* EQFeatureTableViewCell.swift in Sources */,
 				BB3C13F625F70CD300A62B53 /* EQDetailsViewController.swift in Sources */,
 				BB3C140825F7127400A62B53 /* EQSplitViewController.swift in Sources */,
 				BBD4A6AF25F81B8900D9357E /* EarthQuakeDataSource.swift in Sources */,

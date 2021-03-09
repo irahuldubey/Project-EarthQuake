@@ -34,38 +34,6 @@
             endingLineNumber = "33"
             landmarkName = "performRestServiceOperation(_:completionHandler:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "6FFB7D5D-328C-4093-B066-34BE9AB6B024 - 610910117b871bec"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "EarthQuake.RestService.performRestServiceOperation(_: EarthQuake.RestServiceOperation, completionHandler: (EarthQuake.Result&lt;EarthQuake.RestServiceResponseParser&gt;) -&gt; ()) -&gt; Swift.Optional&lt;__C.NSURLSessionTask&gt;"
-                  moduleName = "EarthQuake"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/rahuldubey/Documents/Projects/Project-EarthQuake/EarthQuake/EarthQuake/Networking/External/RestService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "33"
-                  endingLineNumber = "33"
-                  offsetFromSymbolStart = "372">
-               </Location>
-               <Location
-                  uuid = "6FFB7D5D-328C-4093-B066-34BE9AB6B024 - 5a4fbf7eaea5ee7e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EarthQuake.RestService.performRestServiceOperation(_: EarthQuake.RestServiceOperation, completionHandler: (EarthQuake.Result&lt;EarthQuake.RestServiceResponseParser&gt;) -&gt; ()) -&gt; Swift.Optional&lt;__C.NSURLSessionTask&gt;"
-                  moduleName = "EarthQuake"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/rahuldubey/Documents/Projects/Project-EarthQuake/EarthQuake/EarthQuake/Networking/External/RestService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "34"
-                  endingLineNumber = "34"
-                  offsetFromSymbolStart = "184">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -82,6 +50,70 @@
             endingLineNumber = "35"
             landmarkName = "performRestServiceOperation(_:completionHandler:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "11F24A86-5FBE-4D2E-BE1E-7E49286D2C60"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EarthQuake/DataSourcre/EarthQuakeDataSource.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "tableView(_:numberOfRowsInSection:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B9C2C35D-B790-4055-A3E5-E7AD2CD4CE0E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EarthQuake/DataSourcre/EarthQuakeDataSource.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A24AB605-7FBF-41EF-B3B5-7332B2C19BA6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EarthQuake/DataSourcre/EarthQuakeDataSource.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "numberOfSections(in:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A5A4B65B-9168-4CE9-8850-D5F536B6CF2A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EarthQuake/ViewControllers/EQMasterViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "EQMasterViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
