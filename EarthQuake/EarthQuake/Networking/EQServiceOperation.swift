@@ -18,7 +18,7 @@ extension EQServiceOperation: RestServiceOperation {
     public typealias Components = RestServiceRequestConfiguration.PathComponents
     
     private struct Constants {
-        static let base = "earthquake.usgs.gov"
+        static let base = AppConfigurationService().eqDomain
         enum EndPoint: String {
             case significantThirtyDays
         }
@@ -40,7 +40,7 @@ extension EQServiceOperation: RestServiceOperation {
     private var path: String {
         switch self {
         case .fetchRecentEarthQuakeList:
-            return "/earthquakes/feed/v1.0/summary/significant_month.geojson"
+            return AppConfigurationService().eqPath
         }
     }
     
