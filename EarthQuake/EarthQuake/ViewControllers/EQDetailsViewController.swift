@@ -15,7 +15,6 @@ class EQDetailsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
     /*
     // MARK: - Navigation
 
@@ -25,9 +24,9 @@ class EQDetailsViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
 
+// 
 extension EQDetailsViewController: EQDetailsViewControllerDelegate {
   func selectedEarthQuakeZone() { }
 }

@@ -20,5 +20,69 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6FFB7D5D-328C-4093-B066-34BE9AB6B024"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EarthQuake/Networking/External/RestService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "performRestServiceOperation(_:completionHandler:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6FFB7D5D-328C-4093-B066-34BE9AB6B024 - 610910117b871bec"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EarthQuake.RestService.performRestServiceOperation(_: EarthQuake.RestServiceOperation, completionHandler: (EarthQuake.Result&lt;EarthQuake.RestServiceResponseParser&gt;) -&gt; ()) -&gt; Swift.Optional&lt;__C.NSURLSessionTask&gt;"
+                  moduleName = "EarthQuake"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rahuldubey/Documents/Projects/Project-EarthQuake/EarthQuake/EarthQuake/Networking/External/RestService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "372">
+               </Location>
+               <Location
+                  uuid = "6FFB7D5D-328C-4093-B066-34BE9AB6B024 - 5a4fbf7eaea5ee7e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EarthQuake.RestService.performRestServiceOperation(_: EarthQuake.RestServiceOperation, completionHandler: (EarthQuake.Result&lt;EarthQuake.RestServiceResponseParser&gt;) -&gt; ()) -&gt; Swift.Optional&lt;__C.NSURLSessionTask&gt;"
+                  moduleName = "EarthQuake"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rahuldubey/Documents/Projects/Project-EarthQuake/EarthQuake/EarthQuake/Networking/External/RestService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "184">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "29968BFC-7AC0-4DB9-8F4E-EF67147675EB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EarthQuake/Networking/External/RestService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "performRestServiceOperation(_:completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

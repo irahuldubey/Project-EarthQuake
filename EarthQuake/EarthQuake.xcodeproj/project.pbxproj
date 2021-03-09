@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -23,6 +23,13 @@
 		BB3C140625F7127400A62B53 /* EQSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C140525F7127400A62B53 /* EQSplitViewController.swift */; };
 		BB3C140725F7127400A62B53 /* EQSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C140525F7127400A62B53 /* EQSplitViewController.swift */; };
 		BB3C140825F7127400A62B53 /* EQSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C140525F7127400A62B53 /* EQSplitViewController.swift */; };
+		BBD4A5DA25F7667000D9357E /* EQServiceOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD4A5D925F7667000D9357E /* EQServiceOperation.swift */; };
+		BBD4A5DF25F76EBF00D9357E /* EQService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD4A5DE25F76EBF00D9357E /* EQService.swift */; };
+		BBD4A5E525F77BA800D9357E /* EQEarthQuakeFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD4A5E425F77BA800D9357E /* EQEarthQuakeFeatures.swift */; };
+		BBD4A5ED25F77BCE00D9357E /* EQEarthMetaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD4A5EC25F77BCE00D9357E /* EQEarthMetaData.swift */; };
+		BBD4A5F525F77C1000D9357E /* EQEarthQuake.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD4A5F425F77C1000D9357E /* EQEarthQuake.swift */; };
+		BBD4A5FA25F77C5500D9357E /* EQEarthQuakeProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD4A5F925F77C5500D9357E /* EQEarthQuakeProperties.swift */; };
+		BBD4A67825F7FCBD00D9357E /* RestServicePackage in Frameworks */ = {isa = PBXBuildFile; productRef = BBD4A67725F7FCBD00D9357E /* RestServicePackage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +66,13 @@
 		BB3C13EC25F70CC300A62B53 /* EQMasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQMasterViewController.swift; sourceTree = "<group>"; };
 		BB3C13F325F70CD300A62B53 /* EQDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQDetailsViewController.swift; sourceTree = "<group>"; };
 		BB3C140525F7127400A62B53 /* EQSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQSplitViewController.swift; sourceTree = "<group>"; };
+		BBD4A5D925F7667000D9357E /* EQServiceOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQServiceOperation.swift; sourceTree = "<group>"; };
+		BBD4A5DE25F76EBF00D9357E /* EQService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQService.swift; sourceTree = "<group>"; };
+		BBD4A5E425F77BA800D9357E /* EQEarthQuakeFeatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQEarthQuakeFeatures.swift; sourceTree = "<group>"; };
+		BBD4A5EC25F77BCE00D9357E /* EQEarthMetaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQEarthMetaData.swift; sourceTree = "<group>"; };
+		BBD4A5F425F77C1000D9357E /* EQEarthQuake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQEarthQuake.swift; sourceTree = "<group>"; };
+		BBD4A5F925F77C5500D9357E /* EQEarthQuakeProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQEarthQuakeProperties.swift; sourceTree = "<group>"; };
+		BBD4A67D25F7FD0C00D9357E /* RestServicePackage */ = {isa = PBXFileReference; lastKnownFileType = folder; name = RestServicePackage; path = ../../../SwiftPackages/RestServicePackage; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBD4A67825F7FCBD00D9357E /* RestServicePackage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +108,7 @@
 				BB3C13C625F7055000A62B53 /* EarthQuakeTests */,
 				BB3C13D125F7055000A62B53 /* EarthQuakeUITests */,
 				BB3C13AE25F7054F00A62B53 /* Products */,
+				BBD4A63F25F7EF4300D9357E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,12 +125,17 @@
 		BB3C13AF25F7054F00A62B53 /* EarthQuake */ = {
 			isa = PBXGroup;
 			children = (
-				BB3C13E825F7060700A62B53 /* Resources */,
-				BB3C13E725F705E000A62B53 /* AppDelegates */,
+				BBD4A67C25F7FCF000D9357E /* SwiftPackages */,
+				BB3C13E725F705E000A62B53 /* AppDelegate */,
 				BB3C13E625F705CE00A62B53 /* ViewControllers */,
+				BB8BADF925F7304F005264CD /* Views */,
 				BB3C13E525F705BC00A62B53 /* Model */,
 				BB3C13E425F705B600A62B53 /* ViewModel */,
-				BB3C13E325F705A200A62B53 /* Storyboards */,
+				BB3C13E325F705A200A62B53 /* UserInterface */,
+				BBD4A5A425F73BBF00D9357E /* Networking */,
+				BB8BADFA25F73064005264CD /* Extensions */,
+				BB8BADFB25F73079005264CD /* Utilities */,
+				BB3C13E825F7060700A62B53 /* Resources */,
 				BB3C13BE25F7055000A62B53 /* Info.plist */,
 			);
 			path = EarthQuake;
@@ -138,13 +159,13 @@
 			path = EarthQuakeUITests;
 			sourceTree = "<group>";
 		};
-		BB3C13E325F705A200A62B53 /* Storyboards */ = {
+		BB3C13E325F705A200A62B53 /* UserInterface */ = {
 			isa = PBXGroup;
 			children = (
 				BB3C13BB25F7055000A62B53 /* LaunchScreen.storyboard */,
 				BB3C13B625F7054F00A62B53 /* Main.storyboard */,
 			);
-			path = Storyboards;
+			path = UserInterface;
 			sourceTree = "<group>";
 		};
 		BB3C13E425F705B600A62B53 /* ViewModel */ = {
@@ -157,6 +178,10 @@
 		BB3C13E525F705BC00A62B53 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BBD4A5E425F77BA800D9357E /* EQEarthQuakeFeatures.swift */,
+				BBD4A5EC25F77BCE00D9357E /* EQEarthMetaData.swift */,
+				BBD4A5F425F77C1000D9357E /* EQEarthQuake.swift */,
+				BBD4A5F925F77C5500D9357E /* EQEarthQuakeProperties.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -171,13 +196,13 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		BB3C13E725F705E000A62B53 /* AppDelegates */ = {
+		BB3C13E725F705E000A62B53 /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
 				BB3C13B025F7054F00A62B53 /* EQAppDelegate.swift */,
 				BB3C13B225F7054F00A62B53 /* EQSceneDelegate.swift */,
 			);
-			path = AppDelegates;
+			path = AppDelegate;
 			sourceTree = "<group>";
 		};
 		BB3C13E825F7060700A62B53 /* Resources */ = {
@@ -186,6 +211,51 @@
 				BB3C13B925F7055000A62B53 /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		BB8BADF925F7304F005264CD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BB8BADFA25F73064005264CD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BB8BADFB25F73079005264CD /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		BBD4A5A425F73BBF00D9357E /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				BBD4A5D925F7667000D9357E /* EQServiceOperation.swift */,
+				BBD4A5DE25F76EBF00D9357E /* EQService.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		BBD4A63F25F7EF4300D9357E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BBD4A67C25F7FCF000D9357E /* SwiftPackages */ = {
+			isa = PBXGroup;
+			children = (
+				BBD4A67D25F7FD0C00D9357E /* RestServicePackage */,
+			);
+			path = SwiftPackages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,6 +274,9 @@
 			dependencies = (
 			);
 			name = EarthQuake;
+			packageProductDependencies = (
+				BBD4A67725F7FCBD00D9357E /* RestServicePackage */,
+			);
 			productName = EarthQuake;
 			productReference = BB3C13AD25F7054F00A62B53 /* EarthQuake.app */;
 			productType = "com.apple.product-type.application";
@@ -318,11 +391,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBD4A5DA25F7667000D9357E /* EQServiceOperation.swift in Sources */,
+				BBD4A5DF25F76EBF00D9357E /* EQService.swift in Sources */,
+				BBD4A5E525F77BA800D9357E /* EQEarthQuakeFeatures.swift in Sources */,
 				BB3C13ED25F70CC300A62B53 /* EQMasterViewController.swift in Sources */,
 				BB3C13B125F7054F00A62B53 /* EQAppDelegate.swift in Sources */,
+				BBD4A5F525F77C1000D9357E /* EQEarthQuake.swift in Sources */,
+				BBD4A5ED25F77BCE00D9357E /* EQEarthMetaData.swift in Sources */,
 				BB3C140625F7127400A62B53 /* EQSplitViewController.swift in Sources */,
 				BB3C13B325F7054F00A62B53 /* EQSceneDelegate.swift in Sources */,
 				BB3C13F425F70CD300A62B53 /* EQDetailsViewController.swift in Sources */,
+				BBD4A5FA25F77C5500D9357E /* EQEarthQuakeProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,7 +513,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -489,7 +568,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -655,6 +734,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BBD4A67725F7FCBD00D9357E /* RestServicePackage */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RestServicePackage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BB3C13A525F7054F00A62B53 /* Project object */;
 }

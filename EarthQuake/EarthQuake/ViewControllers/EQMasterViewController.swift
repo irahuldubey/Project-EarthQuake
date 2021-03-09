@@ -1,11 +1,12 @@
 //
-//  MasterViewController.swift
+//  EQMasterViewController.swift
 //  EarthQuake
 //
 //  Created by Rahul Dubey on 3/8/21.
 //
 
 import UIKit
+import RestServicePackage
 
 protocol EQDetailsViewControllerDelegate: class {
   func selectedEarthQuakeZone()
@@ -17,12 +18,16 @@ class EQMasterViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.clearsSelectionOnViewWillAppear = false
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        EQService().fetchRecentEarthQuakeList(modelType: EQEarthQuakeFeatures.self, completionHandler: { [weak self] (result) in
+            switch result {
+            case .success(let eqFeatures):
+                print(eqFeatures)
+            case .failure(let error):
+                print(error)
+            }
+        })
     }
 
     // MARK: - Table view data source
@@ -48,41 +53,6 @@ class EQMasterViewController: UITableViewController {
             showDetailViewController(delegate, sender: nil)
         }
     }
-    
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
 
     // MARK: - Navigation
 
