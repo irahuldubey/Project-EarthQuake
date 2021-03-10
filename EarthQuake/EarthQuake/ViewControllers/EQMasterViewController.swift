@@ -15,6 +15,7 @@ final class EQMasterViewController: UITableViewController, ActivityIndicatorProt
     private var masterViewModel: EQMasterViewModelProtocol?
     private var earthQuakeArray: [EQEarthQuake]?
     private var eqError: EQError?
+    var activityIndicator = UIActivityIndicatorView()
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,9 +82,8 @@ extension EQMasterViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let earthQuakeArray = earthQuakeArray {
             let selectedEarthQuakeIndex = earthQuakeArray[indexPath.row]
-            print(selectedEarthQuakeIndex)
+            self.performSegue(withIdentifier: SegueIdentifiers.detail, sender: selectedEarthQuakeIndex)
         }
-        
     }
 }
 

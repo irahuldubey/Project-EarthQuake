@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" rowHeight="163" id="Vka-tN-dpM" customClass="EQFeatureTableViewCell" customModule="EarthQuake" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="eqCellIdentifier" rowHeight="163" id="Vka-tN-dpM" customClass="EQFeatureTableViewCell" customModule="EarthQuake" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="163"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Vka-tN-dpM" id="5Bt-2E-ZFx">
@@ -73,6 +73,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Significant Earthquakes" id="EO0-u7-JcO"/>
+                    <connections>
+                        <segue destination="HN8-Fd-QFh" kind="show" identifier="DetailViewControllerSegue" id="BiH-jz-f7M"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hyt-Ta-xzj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -88,6 +91,7 @@
                         <viewLayoutGuide key="safeArea" id="BrU-Qf-1Ll"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="X3l-7y-e6s"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jlc-ms-AYb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

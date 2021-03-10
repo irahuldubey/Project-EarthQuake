@@ -13,6 +13,7 @@
 		BB02494025F83AFE00E9A884 /* EQError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB02493F25F83AFE00E9A884 /* EQError.swift */; };
 		BB02494125F83AFE00E9A884 /* EQError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB02493F25F83AFE00E9A884 /* EQError.swift */; };
 		BB02494225F83AFE00E9A884 /* EQError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB02493F25F83AFE00E9A884 /* EQError.swift */; };
+		BB02499225F88A7D00E9A884 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB02499125F88A7D00E9A884 /* Constants.swift */; };
 		BB3C13B125F7054F00A62B53 /* EQAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C13B025F7054F00A62B53 /* EQAppDelegate.swift */; };
 		BB3C13B325F7054F00A62B53 /* EQSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C13B225F7054F00A62B53 /* EQSceneDelegate.swift */; };
 		BB3C13B825F7054F00A62B53 /* EQMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB3C13B625F7054F00A62B53 /* EQMain.storyboard */; };
@@ -66,6 +67,7 @@
 /* Begin PBXFileReference section */
 		BB02492725F820EB00E9A884 /* EQFeatureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQFeatureTableViewCell.swift; sourceTree = "<group>"; };
 		BB02493F25F83AFE00E9A884 /* EQError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQError.swift; sourceTree = "<group>"; };
+		BB02499125F88A7D00E9A884 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BB3C13AD25F7054F00A62B53 /* EarthQuake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EarthQuake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB3C13B025F7054F00A62B53 /* EQAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQAppDelegate.swift; sourceTree = "<group>"; };
 		BB3C13B225F7054F00A62B53 /* EQSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQSceneDelegate.swift; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				BB02493F25F83AFE00E9A884 /* EQError.swift */,
+				BB02499125F88A7D00E9A884 /* Constants.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -436,6 +439,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBD4A5DA25F7667000D9357E /* EQServiceOperation.swift in Sources */,
+				BB02499225F88A7D00E9A884 /* Constants.swift in Sources */,
 				BBD4A69D25F814E600D9357E /* EQDetailsViewModel.swift in Sources */,
 				BBD4A69825F814CD00D9357E /* EQMasterViewModel.swift in Sources */,
 				BB02494025F83AFE00E9A884 /* EQError.swift in Sources */,
