@@ -13,19 +13,21 @@ class GenericDataSource<T> : NSObject {
     var data: DynamicBindingObserver<[T]> = DynamicBindingObserver([])
 }
 
-final class EQEarthQuakeDataSource: GenericDataSource<EQEarthQuakeFeatures>, UITableViewDataSource {
+final class EarthQuakeDataSource: GenericDataSource<EQEarthQuakeFeatures>, UITableViewDataSource {
     // Right now we will keep a hard coded value for number of sections
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
-        //return data.value.count
+        let features = data.value.first
+        return features?.metaData.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-        return cell
+        let eqCell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! EQFeatureTableViewCell
+        guard let earthQuake = data.value.first?.earthQuakes[indexPath.row] else { return UITableViewCell() }
+        eqCell.setupCell(with: earthQuake)
+        return eqCell
     }
 }

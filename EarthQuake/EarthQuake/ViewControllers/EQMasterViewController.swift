@@ -15,8 +15,8 @@ protocol EQDetailsViewControllerDelegate: class {
 final class EQMasterViewController: UITableViewController {
     
     weak var delegate: EQDetailsViewControllerDelegate?
-    private let eqDataSource = EQEarthQuakeDataSource()
-    private var viewModel: EQMasterViewModelProtocol?
+    private let eqDataSource = EarthQuakeDataSource()
+    private var masterViewModel: EQMasterViewModelProtocol?
     
     /*
     // Dependency Injection for Unit Testing the View Controller
@@ -34,13 +34,21 @@ final class EQMasterViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel = EQMasterViewModel.init(with: eqDataSource)
+        masterViewModel = EQMasterViewModel.init(with: eqDataSource)
         
         self.tableView.dataSource = self.eqDataSource
         
-        self.eqDataSource.data.addAndNotify(observer: self) { [weak self] _ in
-            guard let strongSelf = self else { return }
-            strongSelf.tableView.reloadData()
+        eqDataSource.data.addAndNotify(observer: self) { _ in
+            self.tableView.reloadData()
         }
+        
+        // add error handling example
+        self.masterViewModel?.handleUIError = { [weak self] error in
+            let controller = UIAlertController(title: "An error occured", message: "Oops, something went wrong!", preferredStyle: .alert)
+            controller.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))
+            self?.present(controller, animated: true, completion: nil)
+        }
+        
+        masterViewModel?.fetchEarthQuakeSignificant()
     }
 }

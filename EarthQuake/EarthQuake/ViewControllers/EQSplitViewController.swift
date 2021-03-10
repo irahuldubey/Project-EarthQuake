@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EQSplitViewController: UISplitViewController {
+final class EQSplitViewController: UISplitViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self

@@ -9,15 +9,40 @@ import Foundation
 
 protocol EQMasterViewModelProtocol {
     func fetchEarthQuakeSignificant()
+    var handleUIError : ((EQError?) -> Void)? { get set }
 }
 
-final class EQMasterViewModel: EQMasterViewModelProtocol {
+struct EQMasterViewModel: EQMasterViewModelProtocol {
  
-    func fetchEarthQuakeSignificant() { }
+    weak var dataSource: GenericDataSource<EQEarthQuakeFeatures>?
+    private var service: EQServiceProtocol?
+
+    // Handle Error on UI side
+    var handleUIError : ((EQError?) -> Void)?
     
-    private let dataSource: EQEarthQuakeDataSource
-    
-    init(with dataSource: EQEarthQuakeDataSource) {
+    init(with dataSource: GenericDataSource<EQEarthQuakeFeatures>?, andService service: EQServiceProtocol = EQService()) {
         self.dataSource = dataSource
+        self.service = service
+    }
+    
+    func fetchEarthQuakeSignificant() {
+
+        guard let service = service  else {
+            self.handleUIError?(EQError.customError(string: "Missing Service"))
+            return
+        }
+        
+        service.fetchRecentEarthQuakeList(modelType: EQEarthQuakeFeatures.self) {(result) in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let earthQuakeFeature) :
+                    if let dataSource = dataSource {
+                        dataSource.data.value = [earthQuakeFeature]
+                    }
+                case .failure( _):
+                    self.handleUIError?(EQError.customError(string: "Failed to receive response from webservice"))
+                }
+            }
+        }
     }
 }

@@ -9,8 +9,15 @@ import Foundation
 import RestServicePackage
 
 public protocol EQServiceProtocol {
-    func fetchRecentEarthQuakeList<T: Codable>(modelType: T.Type, completionHandler: @escaping(Result<T>) -> Void) -> Cancellable? 
+    @discardableResult func fetchRecentEarthQuakeList<T: Codable>(modelType: T.Type, completionHandler: @escaping(Result<T>) -> Void) -> Cancellable? 
 }
+
+// If we want to cancel the request from our application layer.
+public protocol Cancellable {
+    func cancel()
+}
+
+extension URLSessionTask: Cancellable {}
 
 final class EQService: EQServiceProtocol {
     
@@ -60,10 +67,3 @@ final class EQService: EQServiceProtocol {
         }
     }
 }
-
-// If we want to cancel the request from our application layer.
-public protocol Cancellable {
-    func cancel()
-}
-
-extension URLSessionTask: Cancellable {}

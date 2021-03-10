@@ -8,7 +8,8 @@
 import UIKit
 
 class EQFeatureTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var titleLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -17,5 +18,9 @@ class EQFeatureTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
+    }
+    
+    func setupCell(with eqFeature: EQEarthQuake) {
+        titleLabel.text = eqFeature.earthQuakeProperties.title
     }
 }
