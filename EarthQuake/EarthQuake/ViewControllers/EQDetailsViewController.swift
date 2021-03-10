@@ -41,7 +41,11 @@ class EQDetailsViewController: UIViewController, ActivityIndicatorProtocol {
         guard let urlRequest = detailsViewModel?.urlRequest else {
             return
         }
-        self.wkWebView.load(urlRequest)
+        if NetworkMonitor.shared.isNetworkConnectionEnabled {
+            self.wkWebView.load(urlRequest)
+        } else {
+            alert(message: MesasgeStrings.connectionAlertMessage, title: MesasgeStrings.connectionAlertTitle)
+        }
     }
 }
 
@@ -50,7 +54,7 @@ extension EQDetailsViewController: WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
         removeLoadingIndicator() // Hide the loading spinner
-        alert(message: error.localizedDescription, title: "Failed to load")
+        alert(message: MesasgeStrings.webViewError, title: MesasgeStrings.webViewTitle)
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {

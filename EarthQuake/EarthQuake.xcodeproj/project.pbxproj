@@ -70,6 +70,7 @@
 		BB02493F25F83AFE00E9A884 /* EQError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQError.swift; sourceTree = "<group>"; };
 		BB02499125F88A7D00E9A884 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BB02499625F89B3900E9A884 /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
+		BB024A1225F966D600E9A884 /* CachingPackage */ = {isa = PBXFileReference; lastKnownFileType = folder; name = CachingPackage; path = ../../../SwiftPackages/CachingPackage; sourceTree = "<group>"; };
 		BB3C13AD25F7054F00A62B53 /* EarthQuake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EarthQuake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB3C13B025F7054F00A62B53 /* EQAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQAppDelegate.swift; sourceTree = "<group>"; };
 		BB3C13B225F7054F00A62B53 /* EQSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQSceneDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +130,7 @@
 		BB02492325F81F3B00E9A884 /* SwiftLocalPackages */ = {
 			isa = PBXGroup;
 			children = (
+				BB024A1225F966D600E9A884 /* CachingPackage */,
 				BBD4A6FE25F81DD600D9357E /* CorePackage */,
 				BBD4A6FF25F81DD600D9357E /* RestServicePackage */,
 			);

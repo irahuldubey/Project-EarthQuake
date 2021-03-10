@@ -14,11 +14,7 @@ class GenericDataSource<T> : NSObject {
 }
 
 final class EQEarthQuakeDataSource: GenericDataSource<EQEarthQuakeFeatures>, UITableViewDataSource {
-    // Right now we will keep a hard coded value for number of sections
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let features = data.value.first
         return features?.metaData.count ?? 0

@@ -12,7 +12,9 @@ import CorePackage
 class EQAppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        NetworkMonitor.shared.startMonitoring()
+        
         return true
     }
 
@@ -33,9 +35,11 @@ class EQAppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
+        NetworkMonitor.shared.stopMonitoring()
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
+        NetworkMonitor.shared.stopMonitoring()
     }
 }
 

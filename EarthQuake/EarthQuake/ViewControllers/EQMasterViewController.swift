@@ -27,8 +27,6 @@ final class EQMasterViewController: UITableViewController, ActivityIndicatorProt
         fetchSignificantEarthQuakes()
     }
     
-    override func viewDidDisappear(_ animated: Bool) {    }
-    
     private func setupActivityIndicator() {
         showLoadingIndicator(withSize: CGSize.init(width: 100, height: 100))
         activityIndicator.color = .black
@@ -63,6 +61,13 @@ final class EQMasterViewController: UITableViewController, ActivityIndicatorProt
     private func fetchSignificantEarthQuakes() {
         
         guard let masterViewModel = masterViewModel else { return }
+        
+        guard NetworkMonitor.shared.isNetworkConnectionEnabled else {
+            alert(message: MesasgeStrings.connectionAlertMessage, title: MesasgeStrings.connectionAlertTitle)
+            removeLoadingIndicator()
+            // We can do any UI customization here like showing a toast message from the top of the view controller.
+            return
+        }
         
         masterViewModel.fetchEarthQuakeSignificant(completion: { [weak self] (result) in
             guard let strongSelf = self else { return }

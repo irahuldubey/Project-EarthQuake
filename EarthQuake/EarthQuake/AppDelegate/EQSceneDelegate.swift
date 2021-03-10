@@ -21,6 +21,7 @@ class EQSceneDelegate: UIResponder, UIWindowSceneDelegate {
         } else {
             // Fallback on earlier versions
         }
+        
     }
 
     @available(iOS 13.0, *)

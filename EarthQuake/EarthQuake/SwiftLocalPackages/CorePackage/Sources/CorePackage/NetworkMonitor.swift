@@ -8,6 +8,8 @@
 import Foundation
 import Network
 
+// NWPathMonitor is another approach to see the network connection what I observed the immediate change in the network gives me the old network type in the closure and not the updated one, however if I launch for the next time I would get the updated network type. This wont work if user has disabled the network and want to see a different webview index by going back and coming to the webview again in the detail view section. Haven't tried on device but this approach should also work
+
 public enum ConnectionType {
     case wifi
     case ethernet
@@ -21,16 +23,17 @@ public enum NetworkStatus {
 }
 
 @available(iOS 12.0, *)
-public class NetworkNWPathMonitor {
+
+public class NetworkMonitor {
     
-    static public let shared = NetworkNWPathMonitor()
+    static public let shared = NetworkMonitor()
     private var monitor: NWPathMonitor
     private var queue = DispatchQueue.global()
-    public var isNetworkConnectionEnabled: Bool = true
+    public var isNetworkConnectionEnabled: Bool = false
     public var connectionType: ConnectionType = .unknown
  
     // If we want to subscribe for the network connection
-    private var currentNetworkStatus: NetworkStatus = .unavailable {
+    public var currentNetworkStatus: NetworkStatus = .unavailable {
         didSet {
             if currentNetworkStatus != oldValue {
                 NotificationCenter.default.post(name: Notification.Name("NetworkChanged"), object: currentNetworkStatus)
@@ -38,7 +41,7 @@ public class NetworkNWPathMonitor {
         }
     }
     
-    private init(withMonitor pathMonitor: NWPathMonitor = NWPathMonitor()) {
+    public init(withMonitor pathMonitor: NWPathMonitor = NWPathMonitor()) {
         self.monitor = pathMonitor
         self.queue = DispatchQueue.global(qos: .background)
         self.monitor.start(queue: queue)
@@ -63,7 +66,7 @@ public class NetworkNWPathMonitor {
         self.monitor.cancel()
     }
  
-    func checkConnectionTypeForPath(_ path: NWPath) -> ConnectionType {
+    public func checkConnectionTypeForPath(_ path: NWPath) -> ConnectionType {
         if path.usesInterfaceType(.wifi) {
             return .wifi
         } else if path.usesInterfaceType(.wiredEthernet) {
