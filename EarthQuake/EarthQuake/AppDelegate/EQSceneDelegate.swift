@@ -21,13 +21,6 @@ class EQSceneDelegate: UIResponder, UIWindowSceneDelegate {
         } else {
             // Fallback on earlier versions
         }
-        if let splitViewController = window?.rootViewController as? EQSplitViewController,
-           let lastViewController = splitViewController.viewControllers.last as? UINavigationController,
-           let firstViewController = splitViewController.viewControllers.first as? UINavigationController,
-           let masterViewController = firstViewController.viewControllers.first as? EQMasterViewController,
-           let detailsViewController = lastViewController.viewControllers.first as? EQDetailsViewController {
-            masterViewController.delegate = detailsViewController
-        }
     }
 
     @available(iOS 13.0, *)

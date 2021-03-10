@@ -13,7 +13,7 @@ class GenericDataSource<T> : NSObject {
     var data: DynamicBindingObserver<[T]> = DynamicBindingObserver([])
 }
 
-final class EarthQuakeDataSource: GenericDataSource<EQEarthQuakeFeatures>, UITableViewDataSource {
+final class EQEarthQuakeDataSource: GenericDataSource<EQEarthQuakeFeatures>, UITableViewDataSource {
     // Right now we will keep a hard coded value for number of sections
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1

@@ -7,48 +7,91 @@
 
 import UIKit
 import RestServicePackage
+import CorePackage
 
-protocol EQDetailsViewControllerDelegate: class {
-    func selectedEarthQuakeZone()
-}
-
-final class EQMasterViewController: UITableViewController {
+final class EQMasterViewController: UITableViewController, ActivityIndicatorProtocol {
     
-    weak var delegate: EQDetailsViewControllerDelegate?
-    private let eqDataSource = EarthQuakeDataSource()
+    private let eqDataSource = EQEarthQuakeDataSource()
     private var masterViewModel: EQMasterViewModelProtocol?
-    
-    /*
-    // Dependency Injection for Unit Testing the View Controller
-    init(viewModel: EQMasterViewModelProtocol, eqDataSource: EarthQuakeDataSource = EQEarthQuakeDataSource()) {
-        self.viewModel = EQMasterViewModel(with: eqDataSource)
-        super.init(style: .plain)
-        self.tableView.dataSource = eqDataSource
-    }
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-    }
-    */
-    
+    private var earthQuakeArray: [EQEarthQuake]?
+    private var eqError: EQError?
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        initViewModel()
+        initDataSource()
+        setupActivityIndicator()
+        setupRefreshControl()
+        setUpViewBinding()
+        fetchSignificantEarthQuakes()
+    }
+    
+    private func setupActivityIndicator() {
+        showLoadingIndicator(withSize: CGSize.init(width: 100, height: 100))
+        activityIndicator.color = .black
+    }
+    
+    private func initViewModel() {
         masterViewModel = EQMasterViewModel.init(with: eqDataSource)
-        
+    }
+    
+    private func initDataSource() {
         self.tableView.dataSource = self.eqDataSource
-        
+    }
+    
+    private func setUpViewBinding() {
         eqDataSource.data.addAndNotify(observer: self) { _ in
             self.tableView.reloadData()
         }
+    }
+    
+    private func setupRefreshControl() {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action:  #selector(refreshPageWithNewContents), for: .valueChanged)
+        self.refreshControl = refreshControl
+    }
+    
+    @objc private func refreshPageWithNewContents() {
+        fetchSignificantEarthQuakes()
+        tableView.reloadData()
+        refreshControl?.endRefreshing()
+    }
+    
+    private func fetchSignificantEarthQuakes() {
         
-        // add error handling example
-        self.masterViewModel?.handleUIError = { [weak self] error in
-            let controller = UIAlertController(title: "An error occured", message: "Oops, something went wrong!", preferredStyle: .alert)
-            controller.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))
-            self?.present(controller, animated: true, completion: nil)
+        guard let masterViewModel = masterViewModel else { return }
+        
+        masterViewModel.fetchEarthQuakeSignificant(completion: { [weak self] (result) in
+            guard let strongSelf = self else { return }
+            switch(result) {
+            case .success(let earthQuake):
+                strongSelf.earthQuakeArray = earthQuake
+                strongSelf.removeLoadingIndicator()
+            case .failure(let error):
+                // Handle UI Error and keep the reference of it in the view controller for later usage
+                strongSelf.eqError = error
+                strongSelf.removeLoadingIndicator()
+            }
+        })
+    }
+}
+
+//MARK: UITableViewDelegate
+extension EQMasterViewController {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let earthQuakeArray = earthQuakeArray {
+            let selectedEarthQuakeIndex = earthQuakeArray[indexPath.row]
+            print(selectedEarthQuakeIndex)
         }
         
-        masterViewModel?.fetchEarthQuakeSignificant()
+    }
+}
+
+// MARK: - Navigation
+extension EQMasterViewController {
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
     }
 }

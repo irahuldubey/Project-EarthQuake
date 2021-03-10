@@ -26,9 +26,6 @@
 		BB3C13F425F70CD300A62B53 /* EQDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C13F325F70CD300A62B53 /* EQDetailsViewController.swift */; };
 		BB3C13F525F70CD300A62B53 /* EQDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C13F325F70CD300A62B53 /* EQDetailsViewController.swift */; };
 		BB3C13F625F70CD300A62B53 /* EQDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C13F325F70CD300A62B53 /* EQDetailsViewController.swift */; };
-		BB3C140625F7127400A62B53 /* EQSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C140525F7127400A62B53 /* EQSplitViewController.swift */; };
-		BB3C140725F7127400A62B53 /* EQSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C140525F7127400A62B53 /* EQSplitViewController.swift */; };
-		BB3C140825F7127400A62B53 /* EQSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C140525F7127400A62B53 /* EQSplitViewController.swift */; };
 		BBCA6EDC25F81E46002BD835 /* CorePackage in Frameworks */ = {isa = PBXBuildFile; productRef = BBCA6EDB25F81E46002BD835 /* CorePackage */; };
 		BBCA6EDE25F81E4A002BD835 /* RestServicePackage in Frameworks */ = {isa = PBXBuildFile; productRef = BBCA6EDD25F81E4A002BD835 /* RestServicePackage */; };
 		BBD4A5DA25F7667000D9357E /* EQServiceOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD4A5D925F7667000D9357E /* EQServiceOperation.swift */; };
@@ -44,9 +41,9 @@
 		BBD4A69F25F814E600D9357E /* EQDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD4A69C25F814E600D9357E /* EQDetailsViewModel.swift */; };
 		BBD4A6A325F814EB00D9357E /* EQMasterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD4A69725F814CD00D9357E /* EQMasterViewModel.swift */; };
 		BBD4A6A725F814EB00D9357E /* EQMasterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD4A69725F814CD00D9357E /* EQMasterViewModel.swift */; };
-		BBD4A6AD25F81B8900D9357E /* EarthQuakeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD4A6AC25F81B8900D9357E /* EarthQuakeDataSource.swift */; };
-		BBD4A6AE25F81B8900D9357E /* EarthQuakeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD4A6AC25F81B8900D9357E /* EarthQuakeDataSource.swift */; };
-		BBD4A6AF25F81B8900D9357E /* EarthQuakeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD4A6AC25F81B8900D9357E /* EarthQuakeDataSource.swift */; };
+		BBD4A6AD25F81B8900D9357E /* EQEarthQuakeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD4A6AC25F81B8900D9357E /* EQEarthQuakeDataSource.swift */; };
+		BBD4A6AE25F81B8900D9357E /* EQEarthQuakeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD4A6AC25F81B8900D9357E /* EQEarthQuakeDataSource.swift */; };
+		BBD4A6AF25F81B8900D9357E /* EQEarthQuakeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD4A6AC25F81B8900D9357E /* EQEarthQuakeDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,7 +81,6 @@
 		BB3C13D425F7055000A62B53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB3C13EC25F70CC300A62B53 /* EQMasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQMasterViewController.swift; sourceTree = "<group>"; };
 		BB3C13F325F70CD300A62B53 /* EQDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQDetailsViewController.swift; sourceTree = "<group>"; };
-		BB3C140525F7127400A62B53 /* EQSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQSplitViewController.swift; sourceTree = "<group>"; };
 		BBD4A5D925F7667000D9357E /* EQServiceOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQServiceOperation.swift; sourceTree = "<group>"; };
 		BBD4A5DE25F76EBF00D9357E /* EQService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQService.swift; sourceTree = "<group>"; };
 		BBD4A5E425F77BA800D9357E /* EQEarthQuakeFeatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQEarthQuakeFeatures.swift; sourceTree = "<group>"; };
@@ -94,7 +90,7 @@
 		BBD4A68B25F8011A00D9357E /* AppConfigurationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigurationService.swift; sourceTree = "<group>"; };
 		BBD4A69725F814CD00D9357E /* EQMasterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQMasterViewModel.swift; sourceTree = "<group>"; };
 		BBD4A69C25F814E600D9357E /* EQDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQDetailsViewModel.swift; sourceTree = "<group>"; };
-		BBD4A6AC25F81B8900D9357E /* EarthQuakeDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthQuakeDataSource.swift; sourceTree = "<group>"; };
+		BBD4A6AC25F81B8900D9357E /* EQEarthQuakeDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQEarthQuakeDataSource.swift; sourceTree = "<group>"; };
 		BBD4A6FE25F81DD600D9357E /* CorePackage */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CorePackage; sourceTree = "<group>"; };
 		BBD4A6FF25F81DD600D9357E /* RestServicePackage */ = {isa = PBXFileReference; lastKnownFileType = folder; path = RestServicePackage; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -229,7 +225,6 @@
 			children = (
 				BB3C13EC25F70CC300A62B53 /* EQMasterViewController.swift */,
 				BB3C13F325F70CD300A62B53 /* EQDetailsViewController.swift */,
-				BB3C140525F7127400A62B53 /* EQSplitViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -301,7 +296,7 @@
 		BBD4A6AB25F81B6000D9357E /* DataSourcre */ = {
 			isa = PBXGroup;
 			children = (
-				BBD4A6AC25F81B8900D9357E /* EarthQuakeDataSource.swift */,
+				BBD4A6AC25F81B8900D9357E /* EQEarthQuakeDataSource.swift */,
 			);
 			path = DataSourcre;
 			sourceTree = "<group>";
@@ -447,11 +442,10 @@
 				BBD4A5DF25F76EBF00D9357E /* EQService.swift in Sources */,
 				BBD4A5E525F77BA800D9357E /* EQEarthQuakeFeatures.swift in Sources */,
 				BB3C13ED25F70CC300A62B53 /* EQMasterViewController.swift in Sources */,
-				BBD4A6AD25F81B8900D9357E /* EarthQuakeDataSource.swift in Sources */,
+				BBD4A6AD25F81B8900D9357E /* EQEarthQuakeDataSource.swift in Sources */,
 				BB3C13B125F7054F00A62B53 /* EQAppDelegate.swift in Sources */,
 				BBD4A5F525F77C1000D9357E /* EQEarthQuake.swift in Sources */,
 				BBD4A5ED25F77BCE00D9357E /* EQEarthMetaData.swift in Sources */,
-				BB3C140625F7127400A62B53 /* EQSplitViewController.swift in Sources */,
 				BB3C13B325F7054F00A62B53 /* EQSceneDelegate.swift in Sources */,
 				BB02492825F820EB00E9A884 /* EQFeatureTableViewCell.swift in Sources */,
 				BB3C13F425F70CD300A62B53 /* EQDetailsViewController.swift in Sources */,
@@ -471,8 +465,7 @@
 				BB02492925F820EB00E9A884 /* EQFeatureTableViewCell.swift in Sources */,
 				BB3C13F525F70CD300A62B53 /* EQDetailsViewController.swift in Sources */,
 				BB02494125F83AFE00E9A884 /* EQError.swift in Sources */,
-				BB3C140725F7127400A62B53 /* EQSplitViewController.swift in Sources */,
-				BBD4A6AE25F81B8900D9357E /* EarthQuakeDataSource.swift in Sources */,
+				BBD4A6AE25F81B8900D9357E /* EQEarthQuakeDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,8 +480,7 @@
 				BB02492A25F820EB00E9A884 /* EQFeatureTableViewCell.swift in Sources */,
 				BB3C13F625F70CD300A62B53 /* EQDetailsViewController.swift in Sources */,
 				BB02494225F83AFE00E9A884 /* EQError.swift in Sources */,
-				BB3C140825F7127400A62B53 /* EQSplitViewController.swift in Sources */,
-				BBD4A6AF25F81B8900D9357E /* EarthQuakeDataSource.swift in Sources */,
+				BBD4A6AF25F81B8900D9357E /* EQEarthQuakeDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

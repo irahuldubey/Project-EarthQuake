@@ -8,8 +8,7 @@
 import Foundation
 
 protocol EQMasterViewModelProtocol {
-    func fetchEarthQuakeSignificant()
-    var handleUIError : ((EQError?) -> Void)? { get set }
+    func fetchEarthQuakeSignificant(completion: @escaping((Result<[EQEarthQuake]?, EQError>)) -> Void)
 }
 
 struct EQMasterViewModel: EQMasterViewModelProtocol {
@@ -25,10 +24,9 @@ struct EQMasterViewModel: EQMasterViewModelProtocol {
         self.service = service
     }
     
-    func fetchEarthQuakeSignificant() {
+    func fetchEarthQuakeSignificant(completion: @escaping((Result<[EQEarthQuake]?, EQError>)) -> Void) {
 
         guard let service = service  else {
-            self.handleUIError?(EQError.customError(string: "Missing Service"))
             return
         }
         
@@ -39,8 +37,9 @@ struct EQMasterViewModel: EQMasterViewModelProtocol {
                     if let dataSource = dataSource {
                         dataSource.data.value = [earthQuakeFeature]
                     }
+                    completion(.success(earthQuakeFeature.earthQuakes))
                 case .failure( _):
-                    self.handleUIError?(EQError.customError(string: "Failed to receive response from webservice"))
+                    completion(.failure(EQError.networkError(string: "Network Error")))
                 }
             }
         }

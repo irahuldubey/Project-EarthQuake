@@ -25,8 +25,3 @@ class EQDetailsViewController: UIViewController {
     }
     */
 }
-
-// 
-extension EQDetailsViewController: EQDetailsViewControllerDelegate {
-  func selectedEarthQuakeZone() { }
-}

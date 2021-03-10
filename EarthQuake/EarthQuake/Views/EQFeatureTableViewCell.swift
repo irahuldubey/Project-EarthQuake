@@ -8,7 +8,10 @@
 import UIKit
 
 class EQFeatureTableViewCell: UITableViewCell {
+    
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var magnitude: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,5 +25,7 @@ class EQFeatureTableViewCell: UITableViewCell {
     
     func setupCell(with eqFeature: EQEarthQuake) {
         titleLabel.text = eqFeature.earthQuakeProperties.title
+        statusLabel.text = "Status: \(eqFeature.earthQuakeProperties.status)"
+        magnitude.text = "Magnitude: \(String(eqFeature.earthQuakeProperties.magnitude))"
     }
 }
