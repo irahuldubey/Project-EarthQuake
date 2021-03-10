@@ -6,22 +6,54 @@
 //
 
 import UIKit
+import WebKit
+import CorePackage
 
-class EQDetailsViewController: UIViewController {
+class EQDetailsViewController: UIViewController, ActivityIndicatorProtocol {
 
+    @IBOutlet weak var wkWebView: WKWebView!
+    private var detailsViewModel: EQDetailsViewModel?
+    var activityIndicator = UIActivityIndicatorView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        // Show the loading spinner when page starts to load
+        showLoadingIndicator(withSize: CGSize.init(width: 100, height: 100))
+        // Set the navigation title as the selected index title from the master view
+        self.navigationItem.title = detailsViewModel?.title
+        self.wkWebView.navigationDelegate = self
+        loadWebView()
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        wkWebView.stopLoading()
     }
-    */
+    
+    func setUpDetailsViewModel(with earthQuake: EQEarthQuake?) {
+        guard let earthQuake = earthQuake else {
+            return
+        }
+        detailsViewModel = EQDetailsViewModel.init(with: earthQuake)
+    }
+    
+    private func loadWebView() {
+        guard let urlRequest = detailsViewModel?.urlRequest else {
+            return
+        }
+        self.wkWebView.load(urlRequest)
+    }
+}
+
+//MARK: WKNavigationDelegate
+extension EQDetailsViewController: WKNavigationDelegate {
+    
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        removeLoadingIndicator() // Hide the loading spinner
+        alert(message: error.localizedDescription, title: "Failed to load")
+    }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        removeLoadingIndicator() // Hide the loading spinner
+    }
 }

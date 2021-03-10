@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Significant Earthquakes-->
+        <!--Significant Earthquakes - Past 30 days-->
         <scene sceneID="774-o7-6QK">
             <objects>
                 <tableViewController id="XA9-a9-2lX" customClass="EQMasterViewController" customModule="EarthQuake" customModuleProvider="target" sceneMemberID="viewController">
@@ -72,7 +72,7 @@
                             <outlet property="delegate" destination="XA9-a9-2lX" id="yMG-qx-eT3"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Significant Earthquakes" id="EO0-u7-JcO"/>
+                    <navigationItem key="navigationItem" title="Significant Earthquakes - Past 30 days" id="EO0-u7-JcO"/>
                     <connections>
                         <segue destination="HN8-Fd-QFh" kind="show" identifier="DetailViewControllerSegue" id="BiH-jz-f7M"/>
                     </connections>
@@ -88,14 +88,33 @@
                     <view key="view" contentMode="scaleToFill" id="QXJ-AB-2sS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hM5-5J-opP">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="BrU-Qf-1Ll"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hM5-5J-opP" firstAttribute="bottom" secondItem="BrU-Qf-1Ll" secondAttribute="bottom" id="6oD-Rx-VUd"/>
+                            <constraint firstItem="hM5-5J-opP" firstAttribute="top" secondItem="BrU-Qf-1Ll" secondAttribute="top" id="LVE-c7-zVf"/>
+                            <constraint firstItem="hM5-5J-opP" firstAttribute="leading" secondItem="BrU-Qf-1Ll" secondAttribute="leading" id="qFO-ba-7IX"/>
+                            <constraint firstItem="hM5-5J-opP" firstAttribute="trailing" secondItem="BrU-Qf-1Ll" secondAttribute="trailing" id="z2K-EL-JDy"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="X3l-7y-e6s"/>
+                    <connections>
+                        <outlet property="wkWebView" destination="hM5-5J-opP" id="GoK-83-eGY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jlc-ms-AYb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-106" y="548"/>
+            <point key="canvasLocation" x="-107.24637681159422" y="547.76785714285711"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="It0-KG-DRo">

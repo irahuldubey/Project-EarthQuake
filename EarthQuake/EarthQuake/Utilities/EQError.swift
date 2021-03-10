@@ -8,7 +8,9 @@
 import Foundation
 
 enum EQError: Error {
+    
     case networkError(string: String)
     case parserError(string: String)
     case customError(string: String)
+    
 }

@@ -27,6 +27,8 @@ final class EQMasterViewController: UITableViewController, ActivityIndicatorProt
         fetchSignificantEarthQuakes()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {    }
+    
     private func setupActivityIndicator() {
         showLoadingIndicator(withSize: CGSize.init(width: 100, height: 100))
         activityIndicator.color = .black
@@ -45,7 +47,7 @@ final class EQMasterViewController: UITableViewController, ActivityIndicatorProt
             self.tableView.reloadData()
         }
     }
-    
+
     private func setupRefreshControl() {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action:  #selector(refreshPageWithNewContents), for: .valueChanged)
@@ -72,6 +74,7 @@ final class EQMasterViewController: UITableViewController, ActivityIndicatorProt
                 // Handle UI Error and keep the reference of it in the view controller for later usage
                 strongSelf.eqError = error
                 strongSelf.removeLoadingIndicator()
+                strongSelf.alert(message: error.localizedDescription, title: "Failed to load")
             }
         })
     }
@@ -91,7 +94,16 @@ extension EQMasterViewController {
 extension EQMasterViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        guard let segueId = segue.identifier else {
+          return
+        }
+        switch segueId {
+        case SegueIdentifiers.detail :
+            if let detailsViewController = segue.destination as? EQDetailsViewController {
+                detailsViewController.setUpDetailsViewModel(with: sender as? EQEarthQuake)
+            }
+        default:
+            break
+        }
     }
 }
