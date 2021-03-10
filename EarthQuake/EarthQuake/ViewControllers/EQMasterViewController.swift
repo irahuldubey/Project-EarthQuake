@@ -62,13 +62,6 @@ final class EQMasterViewController: UITableViewController, ActivityIndicatorProt
         
         guard let masterViewModel = masterViewModel else { return }
         
-        guard NetworkMonitor.shared.isNetworkConnectionEnabled else {
-            alert(message: MesasgeStrings.connectionAlertMessage, title: MesasgeStrings.connectionAlertTitle)
-            removeLoadingIndicator()
-            // We can do any UI customization here like showing a toast message from the top of the view controller.
-            return
-        }
-        
         masterViewModel.fetchEarthQuakeSignificant(completion: { [weak self] (result) in
             guard let strongSelf = self else { return }
             switch(result) {

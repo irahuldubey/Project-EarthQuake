@@ -12,6 +12,8 @@ import CorePackage
 class EQDetailsViewController: UIViewController, ActivityIndicatorProtocol {
 
     @IBOutlet weak var wkWebView: WKWebView!
+    @IBOutlet weak var offlineImageView: UIImageView!
+
     private var detailsViewModel: EQDetailsViewModel?
     var activityIndicator = UIActivityIndicatorView()
     
@@ -22,6 +24,7 @@ class EQDetailsViewController: UIViewController, ActivityIndicatorProtocol {
         // Set the navigation title as the selected index title from the master view
         self.navigationItem.title = detailsViewModel?.title
         self.wkWebView.navigationDelegate = self
+        self.offlineImageView.isHidden = true
         loadWebView()
     }
     
@@ -44,7 +47,12 @@ class EQDetailsViewController: UIViewController, ActivityIndicatorProtocol {
         if NetworkMonitor.shared.isNetworkConnectionEnabled {
             self.wkWebView.load(urlRequest)
         } else {
-            alert(message: MesasgeStrings.connectionAlertMessage, title: MesasgeStrings.connectionAlertTitle)
+            DispatchQueue.main.async { [weak self] in
+                guard let strongSelf = self else { return }
+                strongSelf.removeLoadingIndicator() // Hide the loading spinner
+                strongSelf.alert(message: MesasgeStrings.connectionAlertMessage, title: MesasgeStrings.connectionAlertTitle)
+                strongSelf.offlineImageView.isHidden = false
+            }
         }
     }
 }
@@ -53,11 +61,17 @@ class EQDetailsViewController: UIViewController, ActivityIndicatorProtocol {
 extension EQDetailsViewController: WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
-        removeLoadingIndicator() // Hide the loading spinner
-        alert(message: MesasgeStrings.webViewError, title: MesasgeStrings.webViewTitle)
+        DispatchQueue.main.async { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.removeLoadingIndicator() // Hide the loading spinner
+            strongSelf.alert(message: MesasgeStrings.webViewError, title: MesasgeStrings.webViewTitle)
+        }
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        removeLoadingIndicator() // Hide the loading spinner
+        DispatchQueue.main.async { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.removeLoadingIndicator() // Hide the loading spinner
+        }
     }
 }

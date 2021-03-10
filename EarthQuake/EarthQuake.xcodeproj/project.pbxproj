@@ -15,6 +15,8 @@
 		BB02494225F83AFE00E9A884 /* EQError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB02493F25F83AFE00E9A884 /* EQError.swift */; };
 		BB02499225F88A7D00E9A884 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB02499125F88A7D00E9A884 /* Constants.swift */; };
 		BB02499725F89B3900E9A884 /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB02499625F89B3900E9A884 /* UIViewController + Extension.swift */; };
+		BB024A1E25F972A300E9A884 /* CachingPackage in Frameworks */ = {isa = PBXBuildFile; productRef = BB024A1D25F972A300E9A884 /* CachingPackage */; };
+		BB024A4B25F97B5500E9A884 /* EQCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB024A4A25F97B5500E9A884 /* EQCacheManager.swift */; };
 		BB3C13B125F7054F00A62B53 /* EQAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C13B025F7054F00A62B53 /* EQAppDelegate.swift */; };
 		BB3C13B325F7054F00A62B53 /* EQSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C13B225F7054F00A62B53 /* EQSceneDelegate.swift */; };
 		BB3C13B825F7054F00A62B53 /* EQMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB3C13B625F7054F00A62B53 /* EQMain.storyboard */; };
@@ -71,6 +73,7 @@
 		BB02499125F88A7D00E9A884 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BB02499625F89B3900E9A884 /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
 		BB024A1225F966D600E9A884 /* CachingPackage */ = {isa = PBXFileReference; lastKnownFileType = folder; name = CachingPackage; path = ../../../SwiftPackages/CachingPackage; sourceTree = "<group>"; };
+		BB024A4A25F97B5500E9A884 /* EQCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQCacheManager.swift; sourceTree = "<group>"; };
 		BB3C13AD25F7054F00A62B53 /* EarthQuake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EarthQuake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB3C13B025F7054F00A62B53 /* EQAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQAppDelegate.swift; sourceTree = "<group>"; };
 		BB3C13B225F7054F00A62B53 /* EQSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQSceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +109,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBCA6EDC25F81E46002BD835 /* CorePackage in Frameworks */,
+				BB024A1E25F972A300E9A884 /* CachingPackage in Frameworks */,
 				BBCA6EDE25F81E4A002BD835 /* RestServicePackage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -135,6 +139,14 @@
 				BBD4A6FF25F81DD600D9357E /* RestServicePackage */,
 			);
 			path = SwiftLocalPackages;
+			sourceTree = "<group>";
+		};
+		BB024A4925F97B3E00E9A884 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				BB024A4A25F97B5500E9A884 /* EQCacheManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		BB3C13A425F7054F00A62B53 = {
@@ -170,6 +182,7 @@
 				BB3C13E525F705BC00A62B53 /* Model */,
 				BB3C13E425F705B600A62B53 /* ViewModel */,
 				BB3C13E325F705A200A62B53 /* UserInterface */,
+				BB024A4925F97B3E00E9A884 /* Managers */,
 				BBD4A5A425F73BBF00D9357E /* Networking */,
 				BB8BADFA25F73064005264CD /* Extensions */,
 				BB8BADFB25F73079005264CD /* Utilities */,
@@ -328,6 +341,7 @@
 			packageProductDependencies = (
 				BBCA6EDB25F81E46002BD835 /* CorePackage */,
 				BBCA6EDD25F81E4A002BD835 /* RestServicePackage */,
+				BB024A1D25F972A300E9A884 /* CachingPackage */,
 			);
 			productName = EarthQuake;
 			productReference = BB3C13AD25F7054F00A62B53 /* EarthQuake.app */;
@@ -458,6 +472,7 @@
 				BBD4A5ED25F77BCE00D9357E /* EQEarthMetaData.swift in Sources */,
 				BB3C13B325F7054F00A62B53 /* EQSceneDelegate.swift in Sources */,
 				BB02492825F820EB00E9A884 /* EQFeatureTableViewCell.swift in Sources */,
+				BB024A4B25F97B5500E9A884 /* EQCacheManager.swift in Sources */,
 				BB3C13F425F70CD300A62B53 /* EQDetailsViewController.swift in Sources */,
 				BBD4A68C25F8011A00D9357E /* AppConfigurationService.swift in Sources */,
 				BBD4A5FA25F77C5500D9357E /* EQEarthQuakeProperties.swift in Sources */,
@@ -803,6 +818,10 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		BB024A1D25F972A300E9A884 /* CachingPackage */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CachingPackage;
+		};
 		BBCA6EDB25F81E46002BD835 /* CorePackage */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = CorePackage;

@@ -7,9 +7,10 @@
 
 import Foundation
 import RestServicePackage
+import CorePackage
 
 public protocol EQServiceProtocol {
-    @discardableResult func fetchRecentEarthQuakeList<T: Codable>(modelType: T.Type, completionHandler: @escaping(Result<T>) -> Void) -> Cancellable? 
+    @discardableResult func fetchRecentEarthQuakeList<T: Codable>(modelType: T.Type, completionHandler: @escaping(Result<T>) -> Void) -> Cancellable?
 }
 
 // If we want to cancel the request from our application layer.
@@ -26,8 +27,6 @@ final class EQService: EQServiceProtocol {
         case parseError
     }
     
-    init() { }
-    
     private let restService: RestService<EQServiceOperation> = RestService()
     
     private lazy var decoder: JSONDecoder = {
@@ -37,7 +36,7 @@ final class EQService: EQServiceProtocol {
         decoder.dateDecodingStrategy = .formatted(dateFormatter)
         return decoder
     }()
-
+    
     @discardableResult // If we don't want to handle cancellable dispatch
     func fetchRecentEarthQuakeList<T: Codable>(modelType: T.Type, completionHandler: @escaping(Result<T>) -> Void) -> Cancellable? {
         let eqOperation: EQServiceOperation = .fetchRecentEarthQuakeList
