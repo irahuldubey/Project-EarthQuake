@@ -20,6 +20,7 @@
 - Designed RestServicePakcage as a SPM which holds generic networking call which can be reused in other applications as well. Configuration can be customized using operations and we are using EQServiceOperation in this project to show the usage.
 - Designed a theme engine which can be used to host any UI configurations
 - Uses codable protocol to parse the keys from the JSON
+- Added some screenshot in the repository to show iPad and iPhone views
 
 # Code Improvements
 
