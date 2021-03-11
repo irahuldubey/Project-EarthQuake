@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CorePackage
 
 class EQFeatureTableViewCell: UITableViewCell {
     
@@ -25,9 +26,9 @@ class EQFeatureTableViewCell: UITableViewCell {
     }
     
     func setUpView() {
-        titleLabel.textColor = .black
-        statusLabel.textColor = .blue
-        magnitude.textColor = .orange
+        titleLabel.textColor = ThemeEngine.label1Color
+        statusLabel.textColor = ThemeEngine.label2Color
+        magnitude.textColor = ThemeEngine.label3Color
     }
     
     func setupCell(with eqFeature: EQEarthQuake) {

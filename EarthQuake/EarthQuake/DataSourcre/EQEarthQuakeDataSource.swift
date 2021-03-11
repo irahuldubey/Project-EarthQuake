@@ -21,9 +21,11 @@ final class EQEarthQuakeDataSource: GenericDataSource<EQEarthQuakeFeatures>, UIT
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let eqCell = tableView.dequeueReusableCell(withIdentifier: ReuseIdentifiers.eqCellIdentifier, for: indexPath) as! EQFeatureTableViewCell
-        guard let earthQuake = data.value.first?.earthQuakes[indexPath.row] else { return UITableViewCell() }
-        eqCell.setupCell(with: earthQuake)
-        return eqCell
+        if let eqCell = tableView.dequeueReusableCell(withIdentifier: ReuseIdentifiers.eqCellIdentifier, for: indexPath) as? EQFeatureTableViewCell {
+            guard let earthQuake = data.value.first?.earthQuakes[indexPath.row] else { return UITableViewCell() }
+            eqCell.setupCell(with: earthQuake)
+            return eqCell
+        }
+        return UITableViewCell()
     }
 }

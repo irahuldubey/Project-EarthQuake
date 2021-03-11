@@ -74,13 +74,17 @@ final class EQMasterViewController: UITableViewController, ActivityIndicatorProt
             guard let strongSelf = self else { return }
             switch(result) {
             case .success(let earthQuake):
-                strongSelf.earthQuakeArray = earthQuake
-                strongSelf.removeLoadingIndicator()
+                DispatchQueue.main.async {
+                    strongSelf.earthQuakeArray = earthQuake
+                    strongSelf.removeLoadingIndicator()
+                }
             case .failure(let error):
-                // Handle UI Error and keep the reference of it in the view controller for later usage
-                strongSelf.eqError = error
-                strongSelf.removeLoadingIndicator()
-                strongSelf.alert(message: error.localizedDescription, title: "Failed to load")
+                DispatchQueue.main.async {
+                    // Handle UI Error and keep the reference of it in the view controller for later usage
+                    strongSelf.eqError = error
+                    strongSelf.removeLoadingIndicator()
+                    strongSelf.alert(message: error.localizedDescription, title: "Failed to load")
+                }
             }
         })
     }

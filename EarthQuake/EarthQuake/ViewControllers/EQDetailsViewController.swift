@@ -11,12 +11,19 @@ import CorePackage
 
 class EQDetailsViewController: UIViewController, ActivityIndicatorProtocol {
 
+    // Hold the reference of wkWebView to load the usgsURL
     @IBOutlet weak var wkWebView: WKWebView!
+    
+    // Show the internet connectivity icon when user is offline
     @IBOutlet weak var offlineImageView: UIImageView!
 
+    // EQDetails viewmodel provides data to this view controller
     private var detailsViewModel: EQDetailsViewModel?
+    
+    // Reference of activity indicator to show the spinner when the url is loading in the webview
     var activityIndicator = UIActivityIndicatorView()
     
+    // MARK: - ViewLifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         // Show the loading spinner when page starts to load

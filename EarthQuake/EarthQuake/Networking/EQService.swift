@@ -22,6 +22,8 @@ extension URLSessionTask: Cancellable {}
 
 final class EQService: EQServiceProtocol {
     
+    private let restServiceQueue = DispatchQueue.global(qos: .userInteractive)
+    
     enum Error: Swift.Error {
         case invalidResponse(Int)
         case parseError
