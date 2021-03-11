@@ -9,11 +9,16 @@ import UIKit
 import RestServicePackage
 import CorePackage
 
+// List view controller for showing the earth quake details in a tabular format.
 final class EQMasterViewController: UITableViewController, ActivityIndicatorProtocol {
     
+    // Moved the datasourcce part in EQEarthQuakeDataSource for testability, maintainbility, resuability
     private let eqDataSource = EQEarthQuakeDataSource()
+    // ViewModel - Holds the presentation logic for this view controller
     private var masterViewModel: EQMasterViewModelProtocol?
+    // EarthQuakeArray - Array of EarthQuake entity which will be shown in the table view
     private var earthQuakeArray: [EQEarthQuake]?
+    // is of type EQError - configured via view model to show meaniningful error code to the user
     private var eqError: EQError?
     var activityIndicator = UIActivityIndicatorView()
         
@@ -24,8 +29,10 @@ final class EQMasterViewController: UITableViewController, ActivityIndicatorProt
         setupActivityIndicator()
         setupRefreshControl()
         setUpViewBinding()
-        fetchSignificantEarthQuakes()
+        fetchSignificantEarthQuakesForPastThirtDays()
     }
+    
+    //MARK: - Private Helper Methods
     
     private func setupActivityIndicator() {
         showLoadingIndicator(withSize: CGSize.init(width: 100, height: 100))
@@ -53,12 +60,13 @@ final class EQMasterViewController: UITableViewController, ActivityIndicatorProt
     }
     
     @objc private func refreshPageWithNewContents() {
-        fetchSignificantEarthQuakes()
+        fetchSignificantEarthQuakesForPastThirtDays()
         tableView.reloadData()
         refreshControl?.endRefreshing()
     }
-    
-    private func fetchSignificantEarthQuakes() {
+
+    /// Fetch the feeds from the API
+    private func fetchSignificantEarthQuakesForPastThirtDays() {
         
         guard let masterViewModel = masterViewModel else { return }
         
@@ -97,6 +105,7 @@ extension EQMasterViewController {
         }
         switch segueId {
         case SegueIdentifiers.detail :
+            // Pass the selected data via the Segue
             if let detailsViewController = segue.destination as? EQDetailsViewController {
                 detailsViewController.setUpDetailsViewModel(with: sender as? EQEarthQuake)
             }
